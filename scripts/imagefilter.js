@@ -1,6 +1,5 @@
-const radioBtn = document.querySelector(".radio")
+const radioBtn = document.querySelector(".radios")
 
-
-addEventListener("change", function(){
-    console.log(radioBtn)
+radioBtn.addEventListener("change", function(event){
+    console.log(event.target.value)
 })
