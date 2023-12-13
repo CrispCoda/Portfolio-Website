@@ -62,3 +62,14 @@ body {
 .search button img {
     width: 16px;
 }
+
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img {
+    width: 200px;
+    margin-right: 10px;
+}
