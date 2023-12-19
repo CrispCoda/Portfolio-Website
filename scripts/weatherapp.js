@@ -20,19 +20,16 @@ async function checkWeather(city) {
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
     
-        if (data.weather[0].main == "Clouds") {
-            weatherIcon.src= "./images/imagesweatherapp/clouds.png"
-        } else if (data.weather[0].main == "Clear") {
-            weatherIcon.src= "./images/imagesweatherapp/clear.png"
-        } else if (data.weather[0].main == "Rain") {
-            weatherIcon.src= "./images/imagesweatherapp/rain.png"
-        } else if (data.weather[0].main == "Drizzle") {
-            weatherIcon.src= "./images/imagesweatherapp/drizzle.png"
-        } else if (data.weather[0].main == "Mist") {
-            weatherIcon.src= "./images/imagesweatherapp/mist.png"
-        } else if (data.weather[0].main == "Snow") {
-            weatherIcon.src= "./images/imagesweatherapp/snow.png"
+        const weatherToImg = {
+            Clouds: "./images/imagesweatherapp/clouds.png",
+            Clear: "./images/imagesweatherapp/clear.png",
+            Rain: "./images/imagesweatherapp/rain.png",
+            Drizzle: "./images/imagesweatherapp/drizzle.png",
+            Mist: "./images/imagesweatherapp/mist.png",
+            Snow: "./images/imagesweatherapp/snow.png"
         }
+
+        weatherIcon.src = weatherToImg[data.weather[0].main]
     
         document.querySelector(".weather").style.display = "block";
         document.querySelector(".error").style.display = "none"
